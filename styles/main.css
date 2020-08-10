@@ -183,7 +183,6 @@ body * {
 }
 
 .content {
-  z-index: 1;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -298,6 +297,7 @@ p {
   font-size: 0.9rem;
   color: var(--text-color);
   font-family: Roboto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 640px) {

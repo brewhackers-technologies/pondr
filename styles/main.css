@@ -148,6 +148,28 @@ body {
   --text-color: #454545;
 }
 
+.yellow-circle {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  background-color: #fed385;
+  width: 300px;
+  height: 300px;
+  border-radius: 300px 0px 300px 300px;
+}
+
+.grey-circle {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  background-color: #454545;
+  width: 250px;
+  height: 250px;
+  border-radius: 250px 0px 250px 250px;
+}
+
 .preload * {
   transition: none !important;
   -webkit-transition: none !important;
@@ -157,6 +179,7 @@ body {
 }
 
 .content {
+  z-index: 1;
   height: 100vh;
   display: flex;
   align-items: center;

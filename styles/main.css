@@ -148,6 +148,10 @@ body {
   --text-color: #454545;
 }
 
+body * {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .yellow-circle {
   position: absolute;
   z-index: 0;
@@ -209,7 +213,6 @@ p {
 
 .download-buttons {
   width: 25vw;
-  justify-content: space-between;
 }
 
 .download-buttons img {
@@ -217,7 +220,7 @@ p {
 }
 
 .download-buttons div {
-  margin: 0 2rem;
+  margin: 0 1rem;
 }
 
 .download-buttons div:first-child {

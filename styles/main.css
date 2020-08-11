@@ -148,7 +148,7 @@ body {
   --text-color: #454545;
 }
 
-body * {
+* {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -194,6 +194,7 @@ body * {
   font-family: "charter";
   margin-bottom: 5vh;
   width: 25vw;
+  line-height: 1.5;
 }
 
 .logo {

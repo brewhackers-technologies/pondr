@@ -193,7 +193,7 @@ body {
   color: var(--text-color);
   font-family: "charter";
   margin-bottom: 5vh;
-  width: 25vw;
+  width: 23vw;
   line-height: 1.5;
 }
 
@@ -277,7 +277,7 @@ p {
   padding-left: 5vw;
   font-size: 0.9rem;
   color: var(--text-color);
-  font-family: Roboto;
+  font-family: "Roboto";
 }
 
 .policies {
@@ -297,8 +297,7 @@ p {
   display: inline-block;
   font-size: 0.9rem;
   color: var(--text-color);
-  font-family: Roboto;
-  cursor: pointer;
+  font-family: "Roboto";
 }
 
 @media only screen and (max-width: 640px) {
@@ -326,7 +325,7 @@ p {
   .content {
     height: auto;
     text-align: center;
-    padding: 0 10vw;
+    padding: 0 5vw;
   }
 
   .description {
@@ -386,7 +385,7 @@ p {
   .content {
     height: auto;
     text-align: center;
-    padding: 0 10vw;
+    padding: 0 5vw;
   }
 
   .description {

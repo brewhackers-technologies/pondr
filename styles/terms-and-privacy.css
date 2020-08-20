@@ -60,6 +60,7 @@ b {
 }
 
 .footer {
+  position: relative;
   background-color: #eeeeee;
   padding: 0.5rem 0;
   bottom: 0;

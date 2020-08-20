@@ -23,6 +23,14 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
 .container {
   padding: 4vw 4vw 10vw 4vw;
 }
@@ -52,7 +60,7 @@ b {
 }
 
 .footer {
-  background-color: #e0e0e0;
+  background-color: #eeeeee;
   padding: 0.5rem 0;
   bottom: 0;
   width: 100%;

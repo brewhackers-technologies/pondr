@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="assets/images/icon.png" />
+    <title>Pondr - Install</title>
+    <script>
+      function iOS() {
+        return (
+          [
+            "iPad Simulator",
+            "iPhone Simulator",
+            "iPod Simulator",
+            "iPad",
+            "iPhone",
+            "iPod",
+            "MacIntel",
+          ].includes(navigator.platform) ||
+          // iPad on iOS 13 detection
+          (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+        );
+      }
+      function redirect() {
+        if (!iOS()) {
+          window.location.replace(
+            "https://play.google.com/store/apps/details?id=com.brewhackers.android.pondr&hl=en"
+          );
+        } else {
+          window.location.replace(
+            "https://apps.apple.com/us/app/id1525140074?action=write-review"
+          );
+        }
+      }
+    </script>
+  </head>
+  <body onload="javascript: redirect()">
+    Please wait redirecting...
+  </body>
+</html>

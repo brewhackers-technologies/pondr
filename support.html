@@ -1,10 +1,18 @@
 <html>
   <head>
-    <title>Pondr - Support</title>
+    <title>Support | Pondr</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/terms-and-privacy.css" />
     <link rel="icon" type="image/png" href="assets/images/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function removeLinks() {
+        if (window.location.href.includes("#no-back")) {
+          document.getElementById("logo").remove();
+          document.getElementById("footer").remove();
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="container">
@@ -132,9 +140,11 @@
     </div>
     <div class="footer">
       <div class="column">
-        <div class="copyright">
-          2021 © Brewhackers Technologies
-        </div>
+        <a href="https://brewhackers.com">
+          <div class="copyright">
+            2021 © Brewhackers Technologies
+          </div>
+        </a>
       </div>
       <div class="column">
         <div class="policies">

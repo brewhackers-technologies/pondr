@@ -86,20 +86,22 @@
             'access-control-allow-origin':'*',
         },  
           data: JSON.stringify({
-            query: `mutation{
-                    unsubscribe(email: "${email}")
+            query: `mutation($email: String!){
+                      unsubscribe(email: $email)
                     }`,
+          variables: {
+          "email": email
+        }
            
       }),
           success: function (response) {
               console.log('response: ', JSON.stringify(response));
-              console.log('success')
+              if(response.data.unsubscribe){
               $('.message').html("<p style='text-align: center; font-size: 25px'>  You’ve unsubscribed. You’ll no longer receive emails from this list.<p>");
-          },
-          error: function (response) {
-              console.log('response: ', JSON.stringify(response));
-            $('.message').html("<p style='text-align: center; font-size: 25px'>Sorry. We are facing some issues. Can't unsubscribe now. Please try again. <p>");
-          }
+              }  else{
+                $('.message').html("<p style='text-align: center; font-size: 25px'>Sorry. We are facing some issues. Can't unsubscribe now. Please try again. <p>");
+              }  
+            }
         })
       } else {
         $('.message').html("<p style='text-align: center; font-size: 25px'>Sorry!. We are facing some issues. Can't unsubscribe now. Please try again. <p>");

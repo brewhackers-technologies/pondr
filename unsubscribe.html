@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="icon" type="image/png" href="assets/images/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,11 +24,11 @@
     <meta property="twitter:description" content="Discover and share interesting ideas, thoughts and perspectives through bite-sized articles that fit your screen.">
     <meta property="twitter:image" content="https://res.cloudinary.com/brewhackers-technologies/image/upload/v1607406235/marketing/getpondr.com_lht138.png">
 
-    <meta name="description" content="Discover and share interesting ideas, thoughts and perspectives through bite-sized articles that fit your screen."/>
+    <meta name="description" content="Discover and share interesting ideas, thoughts and perspectives through bite-sized articles that fit your screen." />
     <meta name=”robots” content=”index, follow”>
     <link rel="canonical" href="http://getpondr.com/" />
     <style>
-        .main-content{
+        .main-content {
             padding: 20px;
             text-align: center;
             align-content: center;
@@ -35,78 +36,79 @@
             color: var(--text-color);
         }
     </style>
-  </head>
-  <body class="preload">
-   
+</head>
+
+<body class="preload">
+
     <section class="main-content" style="height: 85vh;">
         <div class="message">
-  
+
         </div>
     </section>
     <div class="footer" id="footer">
-      <div class="column">
-        <a href="https://brewhackers.com">
-          <div class="copyright">
-            2021 © Brewhackers Technologies
-          </div>
-        </a>
-      </div>
-      <div class="column">
-        <div class="policies">
-          <a href="privacy-policy.html">
-            <div class="policy-link">Privacy Policy</div>
-          </a>
-          <div class="dot">&middot;</div>
-          <a href="terms-of-service.html">
-            <div class="policy-link">Terms of Service</div>
-          </a>
-          <div class="dot">&middot;</div>
-          <a href="support.html">
-            <div class="policy-link">Support</div>
-          </a>
+        <div class="column">
+            <a href="https://brewhackers.com">
+                <div class="copyright">
+                    2021 © Brewhackers Technologies
+                </div>
+            </a>
         </div>
-      </div>
+        <div class="column">
+            <div class="policies">
+                <a href="privacy-policy.html">
+                    <div class="policy-link">Privacy Policy</div>
+                </a>
+                <div class="dot">&middot;</div>
+                <a href="terms-of-service.html">
+                    <div class="policy-link">Terms of Service</div>
+                </a>
+                <div class="dot">&middot;</div>
+                <a href="support.html">
+                    <div class="policy-link">Support</div>
+                </a>
+            </div>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-      
-       $(document).ready(function () {      
-      if (window.location.search.split('?').length > 1) {
-        let params = window.location.search.split('?')[1]
-        let email = params.split('=')[1];
-        console.log('email: ', email);
+        $(document).ready(function() {
+            if (window.location.search.split('?').length > 1) {
+                let params = window.location.search.split('?')[1]
+                let email = params.split('=')[1];
+                console.log('email: ', email);
 
-        $.ajax({
-          url: `https://pondr-server.herokuapp.com/graphql`,
-          contentType: "application/json",
-          type:'POST',
-          method: "POST",
-          crossDomain:true,
-          headers: {
-            'access-control-allow-origin':'*',
-        },  
-          data: JSON.stringify({
-            query: `mutation($email: String!){
+                $.ajax({
+                    url: `https://api.getpondr.com/graphql`,
+                    contentType: "application/json",
+                    type: 'POST',
+                    method: "POST",
+                    crossDomain: true,
+                    headers: {
+                        'access-control-allow-origin': '*',
+                    },
+                    data: JSON.stringify({
+                        query: `mutation($email: String!){
                       unsubscribe(email: $email)
                     }`,
-          variables: {
-          "email": email
-        }
-           
-      }),
-          success: function (response) {
-              console.log('response: ', JSON.stringify(response));
-              if(response.data.unsubscribe){
-              $('.message').html("<p style='text-align: center; font-size: 25px'>  You’ve unsubscribed. You’ll no longer receive emails from this list.<p>");
-              }  else{
-                $('.message').html("<p style='text-align: center; font-size: 25px'>Sorry. We are facing some issues. Can't unsubscribe now. Please try again. <p>");
-              }  
+                        variables: {
+                            "email": email
+                        }
+
+                    }),
+                    success: function(response) {
+                        console.log('response: ', JSON.stringify(response));
+                        if (response.data.unsubscribe) {
+                            $('.message').html("<p style='text-align: center; font-size: 25px'>  You’ve unsubscribed. You’ll no longer receive emails from this list.<p>");
+                        } else {
+                            $('.message').html("<p style='text-align: center; font-size: 25px'>Sorry. We are facing some issues. Can't unsubscribe now. Please try again. <p>");
+                        }
+                    }
+                })
+            } else {
+                $('.message').html("<p style='text-align: center; font-size: 25px'>Sorry!. We are facing some issues. Can't unsubscribe now. Please try again. <p>");
             }
         })
-      } else {
-        $('.message').html("<p style='text-align: center; font-size: 25px'>Sorry!. We are facing some issues. Can't unsubscribe now. Please try again. <p>");
-      }
-    })
-      </script>
-  </body>
+    </script>
+</body>
+
 </html>
